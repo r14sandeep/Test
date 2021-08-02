@@ -1,0 +1,5 @@
+"mcp_3204.obj",
+"main4.obj",
+"adc_display.obj" 
+TO "mcp_3204" 
+RAMSIZE(256) 

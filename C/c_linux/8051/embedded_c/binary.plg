@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+V:\embedded_c\binary.uv2
+Project File Date:  06/02/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling bin_dispaly.c...
+compiling delay2.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY_SEC
+    MODULE:  delay2.obj (DELAY2)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_SEC?DELAY2
+Program Size: data=9.0 xdata=0 code=86
+Target not created
+Build target 'Target 1'
+compiling bin_dispaly.c...
+linking...
+Program Size: data=9.0 xdata=0 code=63
+"binary" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling bin_dispaly.c...
+linking...
+Program Size: data=10.0 xdata=0 code=100
+"binary" - 0 Error(s), 0 Warning(s).

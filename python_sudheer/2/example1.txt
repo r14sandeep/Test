@@ -1,0 +1,10 @@
+lists l = [90, 45, 12, 34]
+tuples t = (4, 12, 34)  t = 4, 12, 34
+sets 
+dictionaries
+
+how to convert a string into list of words split
+how to convert a list of words into a string
+join
+
+non default, default, *args, **kwargs

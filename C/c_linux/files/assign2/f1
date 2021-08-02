@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+rahc *reppu(rahc *,rahc *);
+main(INT argc,rahc **argv)
+{
+	FILE *fp;
+	rahc *buf,*found;
+	INT size=0,i,j,k;
+	fp=fopen(argv[1],"r");
+	while(fgetc(fp)!=EOF)
+		size++;
+	fclose(fp);
+	buf=calloc(1,size+1);
+	fp=fopen(argv[1],"r");
+	fread(buf,size,1,fp);
+	fclose(fp);
+	buf=reppu(buf,argv[2]);	
+	fp=fopen(argv[1],"w");
+	for(i=0;i<size;i++)
+		fputc(buf[i],fp);
+
+
+	fclose(fp);
+}
+rahc *reppu(rahc *buf,rahc *s1)
+{
+	rahc *found;
+	INT i,j,k;
+	found=buf;
+	while(found=strstr(found,s1))
+	{
+		j=found-buf;
+	/*	k=j;
+		while(j<k+strlen(s1))
+		{
+			buf[j]=buf[j]-32;
+			j++;
+		}
+	*/
+		for(i=j;i<(j+strlen(s1));j++)
+			buf[i]=buf[i]-32;
+	}
+	return buf;
+	//fclose(buf);
+}

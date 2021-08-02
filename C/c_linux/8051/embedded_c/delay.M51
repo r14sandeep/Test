@@ -1,0 +1,104 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/10/2016  12:25:14  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE one_ms._delay.obj TO delay RAMSIZE (256) CODE (0X0000-0X1FFF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  one_ms._delay.obj (ONE_MS__DELAY)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  delay (ONE_MS__DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     002DH     UNIT         ?PR?_ONE_SEC_DELAY?ONE_MS__DELAY
+            CODE    0030H     0019H     UNIT         ?PR?_ONE_MS_DELAY?ONE_MS__DELAY
+            CODE    0049H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0055H     0007H     UNIT         ?PR?MAIN?ONE_MS__DELAY
+
+
+
+OVERLAY MAP OF MODULE:   delay (ONE_MS__DELAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ONE_MS__DELAY
+
+?PR?MAIN?ONE_MS__DELAY
+  +--> ?PR?_ONE_SEC_DELAY?ONE_MS__DELAY
+
+?PR?_ONE_SEC_DELAY?ONE_MS__DELAY
+  +--> ?PR?_ONE_MS_DELAY?ONE_MS__DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  delay (ONE_MS__DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ONE_MS__DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0055H         PUBLIC        main
+  C:0003H         PUBLIC        _one_sec_delay
+  C:0030H         PUBLIC        _one_ms_delay
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/10/2016  12:25:14  PAGE 2
+
+
+  -------         PROC          MAIN
+  C:0055H         LINE#         4
+  C:0055H         LINE#         5
+  C:0055H         LINE#         6
+  C:005AH         LINE#         7
+  -------         ENDPROC       MAIN
+  -------         PROC          _ONE_MS_DELAY
+  D:0007H         SYMBOL        dly
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0030H         LINE#         9
+  C:0030H         LINE#         10
+  C:0030H         LINE#         12
+  C:0036H         LINE#         13
+  C:0048H         LINE#         14
+  -------         ENDPROC       _ONE_MS_DELAY
+  -------         PROC          _ONE_SEC_DELAY
+  D:0002H         SYMBOL        delay
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0003H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         15
+  C:0005H         LINE#         16
+  C:0005H         LINE#         18
+  C:000BH         LINE#         19
+  C:000DH         LINE#         20
+  C:000FH         LINE#         21
+  C:001BH         LINE#         22
+  C:001DH         LINE#         23
+  C:0027H         LINE#         24
+  C:002DH         LINE#         25
+  C:002EH         LINE#         26
+  C:002FH         LINE#         29
+  -------         ENDPROC       _ONE_SEC_DELAY
+  -------         ENDMOD        ONE_MS__DELAY
+
+Program Size: data=9.0 xdata=0 code=92
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

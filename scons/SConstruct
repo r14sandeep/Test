@@ -1,0 +1,7 @@
+#Object("1","1.c","2.cpp")
+#Program("a","1.c","2.cpp")
+#Program("a",["1.c","2.c"])
+LIBRARY("lib",["3.cpp"])
+Program("a",["2.cpp","3.cpp"])
+#Object("1","1","1.c")
+#Program("1.c")

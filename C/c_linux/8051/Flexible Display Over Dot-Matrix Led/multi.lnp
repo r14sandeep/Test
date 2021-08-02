@@ -1,0 +1,12 @@
+"main.obj",
+"dml.obj",
+"delay.obj",
+"uart.obj",
+"sipo.obj",
+"function.obj",
+"i2c.obj",
+"rtc.obj",
+"eeprom.obj" 
+TO "multi" 
+RAMSIZE(256) 
+CODE( 0X0000-0X1FFF )

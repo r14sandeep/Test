@@ -1,0 +1,7 @@
+"..\..\keypad.obj",
+"..\..\main2.obj",
+"..\..\display.obj",
+"..\..\delay_ms.obj" 
+TO "..\..\keypad" 
+PRINT(".\keypad.m51") RAMSIZE(256) 
+CODE( 0X0000-0X1FFF )

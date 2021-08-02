@@ -1,0 +1,271 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        07/02/2016  10:11:59  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE C:\isp\keypad.obj, C:\isp\main2.obj, C:\isp\display.obj, C:\isp\delay_ms.obj TO C:\isp\keypad_
+>> basic PRINT (.\keypad_basic.m51) RAMSIZE (256) CODE (0X0000-0X1FFF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\isp\keypad.obj (KEYPAD)
+  C:\isp\main2.obj (MAIN2)
+  C:\isp\display.obj (DISPLAY)
+  C:\isp\delay_ms.obj (DELAY_MS)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  C:\isp\keypad_basic (KEYPAD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MAIN2
+            DATA    000CH     0004H     UNIT         _DATA_GROUP_
+            DATA    0010H     0003H     UNIT         ?DT?DISPLAY
+            DATA    0013H     0002H     UNIT         ?DT?KEYPAD
+            IDATA   0015H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00A3H     UNIT         ?PR?KEYSCAN?KEYPAD
+            CODE    00A6H     00A3H     UNIT         ?PR?_DISPI_4_MUX_SEGS?DISPLAY
+            CODE    0149H     008CH     UNIT         ?C_C51STARTUP
+            CODE    01D5H     0067H     UNIT         ?C?LIB_CODE
+            CODE    023CH     0044H     UNIT         ?PR?MAIN?MAIN2
+            CODE    0280H     0016H     UNIT         ?C_INITSEG
+            CODE    0296H     0015H     UNIT         ?PR?_DELAY_MS?DELAY_MS
+            CODE    02ABH     0010H     UNIT         ?CO?KEYPAD
+            CODE    02BBH     000AH     UNIT         ?CO?DISPLAY
+            CODE    02C5H     0009H     UNIT         ?PR?INIT_ROWS?KEYPAD
+            CODE    02CEH     0009H     UNIT         ?PR?INIT_COLS?KEYPAD
+            CODE    02D7H     0009H     UNIT         ?PR?COLSCAN?KEYPAD
+
+
+
+OVERLAY MAP OF MODULE:   C:\isp\keypad_basic (KEYPAD)
+
+
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?C_C51STARTUP                         -----    -----
+  +--> ?PR?MAIN?MAIN2
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  10:11:59  PAGE 2
+
+
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN2                        -----    -----
+  +--> ?PR?KEYSCAN?KEYPAD
+  +--> ?PR?_DISPI_4_MUX_SEGS?DISPLAY
+
+?PR?KEYSCAN?KEYPAD                    000CH    0002H
+  +--> ?PR?INIT_COLS?KEYPAD
+  +--> ?PR?INIT_ROWS?KEYPAD
+  +--> ?PR?COLSCAN?KEYPAD
+  +--> ?PR?_DISPI_4_MUX_SEGS?DISPLAY
+  +--> ?CO?KEYPAD
+
+?PR?_DISPI_4_MUX_SEGS?DISPLAY         000EH    0002H
+  +--> ?CO?DISPLAY
+  +--> ?PR?_DELAY_MS?DELAY_MS
+
+
+
+SYMBOL TABLE OF MODULE:  C:\isp\keypad_basic (KEYPAD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        KEYPAD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00B0H         PUBLIC        P3
+  B:00B0H.0       PUBLIC        c0
+  B:00B0H.1       PUBLIC        c1
+  B:00B0H.2       PUBLIC        c2
+  B:00B0H.3       PUBLIC        c3
+  B:00B0H.4       PUBLIC        r0
+  B:00B0H.5       PUBLIC        r1
+  B:00B0H.6       PUBLIC        r2
+  B:00B0H.7       PUBLIC        r3
+  D:0013H         PUBLIC        count
+  C:02ABH         PUBLIC        keypad_lut
+  C:02CEH         PUBLIC        init_cols
+  C:02C5H         PUBLIC        init_rows
+  C:02D7H         PUBLIC        colscan
+  C:0003H         PUBLIC        keyscan
+  -------         PROC          INIT_ROWS
+  C:02C5H         LINE#         16
+  C:02C5H         LINE#         17
+  C:02C5H         LINE#         18
+  C:02CDH         LINE#         19
+  -------         ENDPROC       INIT_ROWS
+  -------         PROC          INIT_COLS
+  C:02CEH         LINE#         20
+  C:02CEH         LINE#         21
+  C:02CEH         LINE#         22
+  C:02D6H         LINE#         23
+  -------         ENDPROC       INIT_COLS
+  -------         PROC          COLSCAN
+  C:02D7H         LINE#         24
+  C:02D7H         LINE#         25
+  C:02D7H         LINE#         26
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  10:11:59  PAGE 3
+
+
+  C:02DFH         LINE#         27
+  -------         ENDPROC       COLSCAN
+  -------         PROC          KEYSCAN
+  -------         DO            
+  D:000CH         SYMBOL        row
+  D:000DH         SYMBOL        col
+  C:005DH         SYMBOL        colcheck
+  -------         ENDDO         
+  C:0003H         LINE#         28
+  C:0003H         LINE#         29
+  C:0003H         LINE#         31
+  C:0006H         LINE#         32
+  C:0009H         LINE#         33
+  C:000EH         LINE#         34
+  C:000EH         LINE#         35
+  C:0015H         LINE#         36
+  C:0017H         LINE#         38
+  C:0019H         LINE#         39
+  C:001FH         LINE#         40
+  C:0024H         LINE#         41
+  C:0024H         LINE#         42
+  C:0029H         LINE#         43
+  C:0029H         LINE#         44
+  C:002BH         LINE#         45
+  C:0031H         LINE#         46
+  C:0036H         LINE#         47
+  C:0036H         LINE#         48
+  C:003BH         LINE#         49
+  C:003BH         LINE#         50
+  C:003DH         LINE#         51
+  C:0043H         LINE#         52
+  C:0048H         LINE#         53
+  C:0048H         LINE#         54
+  C:004DH         LINE#         55
+  C:004DH         LINE#         56
+  C:004FH         LINE#         57
+  C:0055H         LINE#         58
+  C:005AH         LINE#         59
+  C:005AH         LINE#         60
+  C:005DH         LINE#         61
+  C:005DH         LINE#         62
+  C:005DH         LINE#         63
+  C:0060H         LINE#         64
+  C:0065H         LINE#         65
+  C:0068H         LINE#         66
+  C:006DH         LINE#         67
+  C:0070H         LINE#         68
+  C:0075H         LINE#         69
+  C:0078H         LINE#         70
+  C:007BH         LINE#         71
+  C:0083H         LINE#         72
+  C:0088H         LINE#         73
+  C:00A5H         LINE#         74
+  -------         ENDPROC       KEYSCAN
+  -------         ENDMOD        KEYPAD
+
+  -------         MODULE        MAIN2
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  10:11:59  PAGE 4
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:023CH         PUBLIC        main
+  D:0008H         PUBLIC        keyvalue
+  D:000AH         PUBLIC        outvalue
+  -------         PROC          MAIN
+  C:023CH         LINE#         5
+  C:023CH         LINE#         6
+  C:023CH         LINE#         8
+  C:023CH         LINE#         9
+  C:023CH         LINE#         11
+  C:0247H         LINE#         12
+  C:0247H         LINE#         13
+  C:024FH         LINE#         14
+  C:025AH         LINE#         15
+  C:0271H         LINE#         17
+  C:0277H         LINE#         18
+  C:0277H         LINE#         19
+  C:027EH         LINE#         20
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN2
+
+  -------         MODULE        DISPLAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0010H         PUBLIC        dp1
+  D:0011H         PUBLIC        dp2
+  D:0012H         PUBLIC        dp3
+  C:00A6H         PUBLIC        _dispi_4_mux_segs
+  B:00A0H.0       PUBLIC        sel1
+  C:02BBH         PUBLIC        seg_lut
+  B:00A0H.1       PUBLIC        sel2
+  B:00A0H.2       PUBLIC        sel3
+  B:00A0H.3       PUBLIC        sel4
+  -------         PROC          _DISPI_4_MUX_SEGS
+  D:000EH         SYMBOL        n
+  C:00A6H         LINE#         13
+  C:00AAH         LINE#         14
+  C:00AAH         LINE#         16
+  C:00C1H         LINE#         17
+  C:00C3H         LINE#         18
+  C:00C8H         LINE#         19
+  C:00CAH         LINE#         20
+  C:00ECH         LINE#         21
+  C:00EEH         LINE#         22
+  C:00F3H         LINE#         23
+  C:00F5H         LINE#         24
+  C:011DH         LINE#         25
+  C:011FH         LINE#         26
+  C:0124H         LINE#         27
+  C:0126H         LINE#         28
+  C:013FH         LINE#         29
+  C:0141H         LINE#         30
+  C:0146H         LINE#         31
+  C:0148H         LINE#         32
+  -------         ENDPROC       _DISPI_4_MUX_SEGS
+  -------         ENDMOD        DISPLAY
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  10:11:59  PAGE 5
+
+
+
+  -------         MODULE        DELAY_MS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0296H         PUBLIC        _delay_ms
+  -------         PROC          _DELAY_MS
+  D:0007H         SYMBOL        n
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0296H         LINE#         2
+  C:0296H         LINE#         3
+  C:0296H         LINE#         5
+  C:029CH         LINE#         6
+  C:02AAH         LINE#         7
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY_MS
+
+  -------         MODULE        ?C?IMUL
+  C:01D5H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?UIDIV
+  C:01E7H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=22.0 xdata=0 code=736
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

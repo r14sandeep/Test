@@ -1,0 +1,49 @@
+. any character except a new line character \n
+
+quantifiers:-
+
+* 0 or more number of times
+r"ca*b"
+c followed by a 0 or more number of times followed by b
+cb, cab, caab, caaab, .....
+
++ 1 or more number of times
+r"ca+b"
+c followed by a 1 or more number of times followed by b
+cab, caab, caaab,.....
+
+? 0 or 1 time
+r"ca?b"
+c followed by a 0 or 1 time followed by b
+cb, cab
+
+{m,} min=m, max = any number of times
+r"ca{3,}b"
+c followed by a 3 or more number times followed by b
+caaab, caaaab, .....
+
+{m,n} min = m, max = n
+r"ca{3,5}b"
+c followed by a 3 to 5 number of times followed by b
+caaab, caaaab, caaaaab
+
+{m} exactly m times
+r"ca{3}b"
+c followed by a exactly 3 times followed by b
+caaab
+
+by default all the quantifiers are greedy in nature i.e they try to match
+as much as possible
+
++?
+
+read
+
+write
+when you try to open a non existing file in write mode it is going to be created
+if you open an existing file in write mode the contents are lost
+
+append
+when you try to open a non existing file in append mode it is going to be created
+if you open an existing file in append mode the contents are not lost
+and the new contents are going to be appended

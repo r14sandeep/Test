@@ -1,0 +1,67 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        07/01/2016  19:26:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE delay.obj TO delay RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  delay.obj (DELAY)
+
+
+LINK MAP OF MODULE:  delay (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     001EH     UNIT         ?PR?_DELAY_MS?DELAY
+
+
+
+OVERLAY MAP OF MODULE:   delay (DELAY)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+
+
+SYMBOL TABLE OF MODULE:  delay (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0000H         PUBLIC        _delay_ms
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        dly
+  -------         DO            
+  D:0004H         SYMBOL        num
+  -------         ENDDO         
+  C:0000H         LINE#         2
+  C:0000H         LINE#         3
+  C:0000H         LINE#         5
+  C:0009H         LINE#         6
+  C:001DH         LINE#         7
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?DELAY
+
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/01/2016  19:26:33  PAGE 2
+
+
+
+Program Size: data=8.0 xdata=0 code=30
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

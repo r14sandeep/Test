@@ -1,0 +1,5 @@
+def print_vals(a,b=100):
+	print(a,b)
+	
+
+print_vals(10, 20)

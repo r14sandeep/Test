@@ -1,0 +1,7 @@
+"delay_ms.obj",
+"i2c.obj",
+"keypad.obj",
+"lcd.obj",
+"main.obj" 
+TO "assg" 
+RAMSIZE(256) 

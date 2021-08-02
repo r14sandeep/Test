@@ -1,0 +1,6 @@
+def print_vals(*args):
+	print(type(args))
+	print(args)
+	
+
+print_vals(10, 20, 3, 45, 22)

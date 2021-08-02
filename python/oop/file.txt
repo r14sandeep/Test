@@ -1,0 +1,22 @@
+#!/user/bin/python
+class textfile:
+	ntfiles=0
+	def __init__(self,fname):
+		textfile.ntfiles+=1
+		self.name=fname
+		self.fh=open(fname,"r")
+		self.lines=self.fh.readlines()
+		self.nlines=len(self.lines)
+		self.nwords=0
+		self.wordcount()
+	def wordcount(self):
+		for line in self.lines:
+			words=line.split()
+			self.nwords+=len(words)
+	def grep(self,target):
+		for line in self.lines:
+			if line.find(target)>=0:
+				print line
+obj=textfile("file.txt")
+obj.wordcount()
+obj.grep()

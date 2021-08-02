@@ -1,0 +1,4 @@
+marks = {"rakesh":100, "sandhya":99, "vinay":91, "bhaskar":77, "aditya":88, "hareesh":92, "ashish":81}
+
+print("Marks of kamal:", marks["kamal"])
+print("remaining code execution")

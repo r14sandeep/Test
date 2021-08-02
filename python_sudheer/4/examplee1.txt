@@ -1,0 +1,27 @@
+map and filter
+
+
+0
+False
+empty ds "" [] {} ()
+None
+
+iterable
+	__getitem__ or __iter__
+
+iterator	
+	is an iterable with next or __next__
+
+generator
+	is an iterator and also it's a function with one or more yield statement
+
+
+all generators are iterators.
+
+
+__name__
+
+__name__ shows dual behaviour
+it's value is __main__ when the code is executed as a program
+it's value is the module name it self when the code is
+imported as a module

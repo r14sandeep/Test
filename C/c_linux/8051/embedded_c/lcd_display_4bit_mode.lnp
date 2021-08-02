@@ -1,0 +1,4 @@
+"lcd_4bit.obj",
+"main3.obj" 
+TO "lcd_display_4bit_mode" 
+RAMSIZE(256) 

@@ -1,0 +1,5 @@
+"main1.obj",
+"seg.obj",
+"delay.obj" 
+TO "led_display" 
+RAMSIZE(256) 

@@ -1,0 +1,9 @@
+message = "hi how are you where are you what are you doing"
+
+#count_words = {"hi":1, "how":1, "are":3, "you":3, 
+count_words = {}
+for word in message.split():
+	count_words[word] = count_words.get(word, 0)+1
+
+print("Occurrence of words:\n", count_words)
+

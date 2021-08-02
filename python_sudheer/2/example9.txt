@@ -1,0 +1,10 @@
+def my_add(a,b):
+	"""this function takes two arguments
+		and returns the sum of it"""
+	return a+b
+
+def my_diff(a,b):
+	if a>b:
+		return a-b
+	else:
+		return b-a

@@ -1,0 +1,6 @@
+"main3.obj",
+"keypad.obj",
+"test.obj",
+"delay.obj" 
+TO "keypad" 
+RAMSIZE(256) 

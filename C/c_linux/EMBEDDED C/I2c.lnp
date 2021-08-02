@@ -1,0 +1,7 @@
+"i2c.obj",
+"delay2.obj",
+"lcd1.obj",
+"keypad1.obj",
+"rtcassign1.obj" 
+TO "I2c" 
+RAMSIZE(256) 

@@ -1,0 +1,74 @@
+Regular Expressions:
+re
+
+match
+	it checks if the pattern is present at the beginning of the string or not.
+	if the pattern is present at the beginning of the string it is going
+to return a match object. Otherwise it returns None object.
+
+search 
+	it checks if the pattern is present anywhere in the string or not.
+if the pattern is present somewhere in the string it is going to return a
+match object. Otherwise it returns None object.
+
+findall
+	it returns list of all the matches.
+sub
+
+. matches any character except a new line character
+. matches a single character only. and that single character can be
+any character except a new line character.
+
+quantifiers:
+* 0 or more number of times
+r"ca*b"
+cb cab caab caaab ...
++ 1 or more number of times
+r"ca+b"
+cab caab caaab caaaab
+? 0 or 1 time
+r"ca?b"
+cb, cab
+{m,} min=m max=any number of times
+r"ca{3,}b"
+caaab caaaab caaaaab .....
+{m,n} min=m max=n
+r"ca{2,5}b"
+caab caaab caaaab caaaaab 
+{m} exactly m times
+r"ca{3}b"
+caaab
+
+
+by default all the quantifiers are greedy in nature
+i.e they try to match as much as possible
+
+you can make quantifiers non greedy in nature
+by placing a question mark after the quantifier.
+
+
+re.search(r"l(.+)g(.+)g", "the lion is coming and the people are running away")
+
+character class:
+a character class matches a single character only
+but that single character should be present in the
+character class set.
+
+[a-z]
+[0-9]
+[aeiou]
+
+escape sequences:
+\w word character [a-zA-Z0-9_]
+\b boundary
+it is not going to match any character.
+it matches the transition from word to non word
+characters and vice versa
+it is there
+\d [0-9]
+\s
+
+
+
+
+

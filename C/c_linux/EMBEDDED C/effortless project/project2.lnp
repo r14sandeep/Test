@@ -1,0 +1,6 @@
+"lcd.obj",
+"delay.obj",
+"keypad1.obj",
+"uart.obj" 
+TO "project2" 
+RAMSIZE(256) 

@@ -1,0 +1,5 @@
+"2.obj",
+"main.obj",
+"delay1.obj" 
+TO "num" 
+RAMSIZE(256) 

@@ -1,0 +1,102 @@
+C51 COMPILER V7.08   KEYPAD                                                                06/18/2016 11:01:24 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE KEYPAD
+OBJECT MODULE PLACED IN keypad.obj
+COMPILER INVOKED BY: C:\Keil2\C51\BIN\C51.EXE New\embedded_c\keypad.c BROWSE DEBUG OBJECTEXTEND PRINT(.\keypad.lst) OBJE
+                    -CT(keypad.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"types.h"
+   3          void dispi_4_mux_segs(u16);   
+   4          extern u16 outvalue;
+   5          u16 count=0;                                                                                              
+             -                                                                                                                        
+             -    
+   6          sbit r0=P3^4;
+   7          sbit r1=P3^5;
+   8          sbit r2=P3^6;
+   9          sbit r3=P3^7;
+  10          sbit c0=P3^0;
+  11          sbit c1=P3^1;
+  12          sbit c2=P3^2;
+  13          sbit c3=P3^3;
+  14          
+  15          code u8 keypad_lut[4][4]={{0,1,2,3},{4,5,6,7},{8,9,10,11},{12,13,14,15}};
+  16          void init_rows(void)
+  17          {
+  18   1              r0=r1=r2=r3=0;
+  19   1      }
+  20          void init_cols(void)
+  21          {
+  22   1              c0=c1=c2=c3=1;
+  23   1      }
+  24          bit colscan(void)
+  25          {
+  26   1              return (c0&c1&c2&c3);
+  27   1      }
+  28          u8 keyscan()
+  29          {
+  30   1              u8 row,col;
+  31   1              init_cols();
+  32   1              init_rows();
+  33   1      while(colscan())
+  34   1      {
+  35   2              dispi_4_mux_segs(outvalue);
+  36   2      }
+  37   1      
+  38   1              r0=0;
+  39   1              r1=r2=r3=1;
+  40   1              if(!colscan())
+  41   1              {
+  42   2                      row=0;goto colcheck;
+  43   2              }
+  44   1              r1=0;
+  45   1              r0=r2=r3=1;
+  46   1              if(!colscan())
+  47   1              {
+  48   2                      row=1;goto colcheck;
+  49   2              }
+  50   1              r2=0;
+  51   1              r0=r1=r3=1;
+  52   1              if(!colscan())
+C51 COMPILER V7.08   KEYPAD                                                                06/18/2016 11:01:24 PAGE 2   
+
+  53   1              {
+  54   2                      row=2;goto colcheck;
+  55   2              }
+  56   1              r3=0;
+  57   1              r0=r1=r2=1;
+  58   1              if(!colscan())
+  59   1              {
+  60   2                      row=3;goto colcheck;
+  61   2              }
+  62   1              colcheck:
+  63   1              if(c0==0)
+  64   1                      col=0;
+  65   1              else if(c1==0)
+  66   1                      col=1;
+  67   1              else if(c2==0)
+  68   1                      col=2;
+  69   1              else if(c3==0)
+  70   1                      col=3;
+  71   1              count++;
+  72   1              while(!colscan());
+  73   1              return keypad_lut[row][col];
+  74   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    190    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,279 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/14/2016  18:05:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE mcp_3204.obj, main4.obj, adc_display.obj TO mcp_3204 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  mcp_3204.obj (MCP_3204)
+  main4.obj (MAIN4)
+  adc_display.obj (ADC_DISPLAY)
+  C:\KEIL2\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL2\C51\LIB\C51FPS.LIB (?C?FPCMP)
+  C:\KEIL2\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL2\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL2\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  mcp_3204 (MCP_3204)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0009H     UNIT         _DATA_GROUP_
+            DATA    0011H     0003H     UNIT         ?DT?ADC_DISPLAY
+                    0014H     000CH                  *** GAP ***
+            BIT     0020H.0   0000H.2   UNIT         _BIT_GROUP_
+                    0020H.2   0000H.6                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0295H     UNIT         ?C?LIB_CODE
+            CODE    0298H     00E8H     UNIT         ?PR?_DISPF_4_MUX_SEGS?ADC_DISPLAY
+            CODE    0380H     00A3H     UNIT         ?PR?_DISPI_4_MUX_SEGS?ADC_DISPLAY
+            CODE    0423H     008CH     UNIT         ?C_C51STARTUP
+            CODE    04AFH     0076H     UNIT         ?PR?_READ_ADC_MCP3204?MCP_3204
+            CODE    0525H     002AH     UNIT         ?PR?MAIN?MAIN4
+            CODE    054FH     000AH     UNIT         ?C_INITSEG
+            CODE    0559H     000AH     UNIT         ?CO?ADC_DISPLAY
+
+
+
+OVERLAY MAP OF MODULE:   mcp_3204 (MCP_3204)
+
+
+SEGMENT                                      BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH     START    LENGTH
+-----------------------------------------------------------------------------
+?C_C51STARTUP                             -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN4
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/14/2016  18:05:28  PAGE 2
+
+
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN4                            -----    -----      0008H    0001H
+  +--> ?PR?_READ_ADC_MCP3204?MCP_3204
+  +--> ?PR?_DISPF_4_MUX_SEGS?ADC_DISPLAY
+
+?PR?_READ_ADC_MCP3204?MCP_3204            0020H.0  0000H.2    -----    -----
+
+?PR?_DISPF_4_MUX_SEGS?ADC_DISPLAY         -----    -----      0009H    0006H
+  +--> ?PR?_DISPI_4_MUX_SEGS?ADC_DISPLAY
+
+?PR?_DISPI_4_MUX_SEGS?ADC_DISPLAY         -----    -----      000FH    0002H
+  +--> ?CO?ADC_DISPLAY
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   _DELAY_MS
+
+
+
+SYMBOL TABLE OF MODULE:  mcp_3204 (MCP_3204)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MCP_3204
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A0H.7       PUBLIC        _cs
+  B:00A0H.4       PUBLIC        clk
+  B:00A0H.5       PUBLIC        din
+  B:00A0H.6       PUBLIC        dout
+  C:04AFH         PUBLIC        _read_adc_mcp3204
+  -------         PROC          _READ_ADC_MCP3204
+  D:0007H         SYMBOL        channelNo
+  -------         DO            
+  D:0002H         SYMBOL        adcval
+  D:0005H         SYMBOL        i
+  B:0020H.0       SYMBOL        d1
+  B:0020H.1       SYMBOL        d0
+  -------         ENDDO         
+  C:04AFH         LINE#         7
+  C:04AFH         LINE#         8
+  C:04AFH         LINE#         9
+  C:04B2H         LINE#         12
+  C:04BAH         LINE#         13
+  C:04C0H         LINE#         14
+  C:04C4H         LINE#         15
+  C:04C6H         LINE#         16
+  C:04CAH         LINE#         17
+  C:04CEH         LINE#         18
+  C:04D2H         LINE#         19
+  C:04D6H         LINE#         20
+  C:04DAH         LINE#         21
+  C:04DEH         LINE#         22
+  C:04E2H         LINE#         23
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/14/2016  18:05:28  PAGE 3
+
+
+  C:04E6H         LINE#         24
+  C:04EAH         LINE#         25
+  C:04ECH         LINE#         26
+  C:04ECH         LINE#         27
+  C:04EEH         LINE#         28
+  C:04F1H         LINE#         29
+  C:0506H         LINE#         30
+  C:0508H         LINE#         31
+  C:050CH         LINE#         32
+  C:050EH         LINE#         33
+  C:0524H         LINE#         34
+  -------         ENDPROC       _READ_ADC_MCP3204
+  -------         ENDMOD        MCP_3204
+
+  -------         MODULE        MAIN4
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0525H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0525H         LINE#         4
+  C:0525H         LINE#         5
+  C:0525H         LINE#         6
+  C:0525H         LINE#         7
+  C:0525H         LINE#         9
+  C:0528H         LINE#         10
+  C:0539H         LINE#         11
+  C:0543H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN4
+
+  -------         MODULE        ADC_DISPLAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0011H         PUBLIC        dp1
+  D:0012H         PUBLIC        dp2
+  D:0013H         PUBLIC        dp3
+  C:0298H         PUBLIC        _dispf_4_mux_segs
+  C:0380H         PUBLIC        _dispi_4_mux_segs
+  B:00A0H.0       PUBLIC        sel1
+  C:0559H         PUBLIC        seg_lut
+  B:00A0H.1       PUBLIC        sel2
+  B:00A0H.2       PUBLIC        sel3
+  B:00A0H.3       PUBLIC        sel4
+  -------         PROC          _DISPI_4_MUX_SEGS
+  D:000FH         SYMBOL        n
+  C:0380H         LINE#         17
+  C:0384H         LINE#         18
+  C:0384H         LINE#         20
+  C:039BH         LINE#         21
+  C:039DH         LINE#         22
+  C:03A2H         LINE#         23
+  C:03A4H         LINE#         24
+  C:03C6H         LINE#         25
+  C:03C8H         LINE#         26
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/14/2016  18:05:28  PAGE 4
+
+
+  C:03CDH         LINE#         27
+  C:03CFH         LINE#         28
+  C:03F7H         LINE#         29
+  C:03F9H         LINE#         30
+  C:03FEH         LINE#         31
+  C:0400H         LINE#         32
+  C:0419H         LINE#         33
+  C:041BH         LINE#         34
+  C:0420H         LINE#         35
+  C:0422H         LINE#         36
+  -------         ENDPROC       _DISPI_4_MUX_SEGS
+  -------         PROC          _DISPF_4_MUX_SEGS
+  D:0009H         SYMBOL        f
+  -------         DO            
+  D:000DH         SYMBOL        i
+  -------         ENDDO         
+  C:0298H         LINE#         38
+  C:02A0H         LINE#         39
+  C:02A0H         LINE#         41
+  C:02C6H         LINE#         42
+  C:02C6H         LINE#         43
+  C:02DFH         LINE#         44
+  C:02E2H         LINE#         45
+  C:02E5H         LINE#         46
+  C:030DH         LINE#         47
+  C:030DH         LINE#         48
+  C:0326H         LINE#         49
+  C:0329H         LINE#         50
+  C:032BH         LINE#         51
+  C:0353H         LINE#         52
+  C:0353H         LINE#         53
+  C:036CH         LINE#         54
+  C:036FH         LINE#         55
+  C:036FH         LINE#         56
+  C:0376H         LINE#         57
+  C:037FH         LINE#         58
+  -------         ENDPROC       _DISPF_4_MUX_SEGS
+  -------         ENDMOD        ADC_DISPLAY
+
+  -------         MODULE        ?C?FPMUL
+  C:0003H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPCMP
+  C:010BH         PUBLIC        ?C?FPCMP
+  C:0109H         PUBLIC        ?C?FPCMP3
+  -------         ENDMOD        ?C?FPCMP
+
+  -------         MODULE        ?C?FCAST
+  C:0180H         PUBLIC        ?C?FCASTC
+  C:017BH         PUBLIC        ?C?FCASTI
+  C:0176H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:01B4H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/14/2016  18:05:28  PAGE 5
+
+
+
+  -------         MODULE        ?C?UIDIV
+  C:0235H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?LNEG
+  C:028AH         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03A0H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03CBH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03FCH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 041EH
+
+Program Size: data=21.2 xdata=0 code=1379
+LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)

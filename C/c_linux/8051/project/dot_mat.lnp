@@ -1,0 +1,6 @@
+"delay.obj",
+"main.obj",
+"sipo.obj",
+"dml.obj" 
+TO "dot_mat" 
+RAMSIZE(256) 

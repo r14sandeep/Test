@@ -1,0 +1,43 @@
+A51 MACRO ASSEMBLER  16BITMUL                                                             05/28/2016 11:41:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V7.08a
+OBJECT MODULE PLACED IN 16bitmul.obj
+ASSEMBLER INVOKED BY: C:\Keil2\C51\BIN\A51.EXE 2205\16bitmul.asm SET(SMALL) DEBUG PRINT(.\16bitmul.lst) OBJECT(16bitmul.
+                      obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+  FFFF                 1     N1 EQU 0FFFFH
+  FFFF                 2     N2 EQU 0FFFFH
+----                   3     CSEG AT 0
+0000 74FF              4     MOV A,#N1
+0002 75F0FF            5     MOV B,#N2
+0005 A4                6     MUL AB
+0006 F533              7     MOV 33H,A
+0008 85F032            8     MOV 32H,B
+                       9     ;MOV A,#N1>>8
+                      10     ;MOV B,#N2
+                      11     ;MUL AB
+                      12     ;ADD A,32H
+                      13     
+                      14     
+                      15     
+                      16     END
+A51 MACRO ASSEMBLER  16BITMUL                                                             05/28/2016 11:41:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+N1 . . . . . . . .  N NUMB   FFFFH   A   
+N2 . . . . . . . .  N NUMB   FFFFH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

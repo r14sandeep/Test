@@ -1,0 +1,138 @@
+C51 COMPILER V7.08   RTCASSIGN                                                             06/18/2016 11:55:27 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE RTCASSIGN
+OBJECT MODULE PLACED IN rtcassign.obj
+COMPILER INVOKED BY: C:\Keil2\C51\BIN\C51.EXE New\embedded_c\rtcassign.c BROWSE DEBUG OBJECTEXTEND PRINT(.\rtcassign.lst
+                    -) OBJECT(rtcassign.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"delay.h"
+   3          #include"i2c.h"
+   4          #include"lcd.h"
+   5          #include"keypad.h"
+*** WARNING C235 IN LINE 9 OF NEW\EMBEDDED_C\KEYPAD.H: parameter 1: different types
+   6          #include"types.h"
+   7          #include"rtc.h"
+   8          u8 count=0,key;
+   9          time rtc;
+  10          main()
+  11          {
+  12   1              u8 keyval;
+  13   1              init_lcd();
+  14   1              while(1)
+  15   1              {
+  16   2                      read_rtc();
+  17   2                      while(!colscan());
+  18   2                              while(1)
+  19   2                              {
+  20   3                                      loop:keyval=keyscan();
+  21   3                                      {
+  22   4                                              while(colscan());
+  23   4                                              {
+  24   5                                                      if(keyval==10)
+  25   5                                                      {
+  26   6                                                              if(count<=4)
+  27   6                                                              {
+  28   7                                                                      count=0;
+  29   7                                                                      goto loop;
+  30   7                                                              }
+  31   6                                                                      count++;
+  32   6                                                                              switch(count)
+  33   6                                                                              {
+  34   7                                                                              case 1:set_hours();
+  35   7                                                                              case 2:set_mins();
+  36   7                                                                              case 3:set_secs();
+  37   7                                                                              }
+  38   6                                                                              i2c_device_write(0xd0,0x02,rtc.hrs);
+  39   6                                                                              i2c_device_write(0xd0,0x01,rtc.mins);
+  40   6                                                                              i2c_device_write(0xd0,0x00,rtc.secs);
+  41   6                                                  }
+  42   5                                              }
+  43   4                                      }
+  44   3                              }
+  45   2                      }
+  46   1      }
+  47          
+  48          void read_rtc(void)
+  49          {
+  50   1      rtc.hrs=i2c_device_read(0xd0,0x02);
+  51   1      rtc.mins=i2c_device_read(0xd0,0x01);
+  52   1      rtc.secs=i2c_device_read(0xd0,0x00);
+  53   1      cmd_lcd(0xc0);
+C51 COMPILER V7.08   RTCASSIGN                                                             06/18/2016 11:55:27 PAGE 2   
+
+  54   1      putc_lcd((rtc.hrs/16)+48);
+  55   1      putc_lcd((rtc.hrs%16)+48);
+  56   1      putc_lcd('.');
+  57   1      cmd_lcd(0xc3);
+  58   1      putc_lcd((rtc.mins/16)+48);
+  59   1      putc_lcd((rtc.mins%16)+48);
+  60   1      putc_lcd('.');
+  61   1      cmd_lcd(0xc6);
+  62   1      putc_lcd((rtc.hrs/16)+48);
+  63   1      putc_lcd((rtc.hrs/16)+48);
+  64   1      }
+  65          void set_hours()
+  66          {
+  67   1      loop:cmd_lcd(0x01);
+  68   1      puts_lcd("enter thr HRS");
+  69   1      cmd_lcd(0xc0);
+  70   1      key=keyscan();
+  71   1      if(key>=3)
+  72   1      goto loop;
+  73   1      delay_ms(100);
+  74   1      key=(key*10)+keyscan();
+  75   1      if(key>23)
+  76   1      goto loop;
+  77   1      rtc.hrs=key;
+  78   1      count=0;
+  79   1      }
+  80          void set_mins()
+  81          {
+  82   1      loop:cmd_lcd(0x01);
+  83   1      puts_lcd("enter thr MINS");
+  84   1      cmd_lcd(0xc0);
+  85   1      key=keyscan();
+  86   1      if(key>=5)
+  87   1      goto loop;
+  88   1      delay_ms(100);
+  89   1      key=(key*10)+keyscan();
+  90   1      if(key>59)
+  91   1      goto loop;
+  92   1      rtc.mins=key;
+  93   1      count=0;
+  94   1      }
+  95          void set_secs()
+  96          {
+  97   1      loop:cmd_lcd(0x01);
+  98   1      puts_lcd("enter thr SECS");
+  99   1      cmd_lcd(0xc0);
+ 100   1      key=keyscan();
+ 101   1      if(key>=5)
+ 102   1      goto loop;
+ 103   1      delay_ms(100);
+ 104   1      key=(key*10)+keyscan();
+ 105   1      if(key>59)
+ 106   1      goto loop;
+ 107   1      rtc.secs=key;
+ 108   1      count=0;
+ 109   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    393    ----
+   CONSTANT SIZE    =     44    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V7.08   RTCASSIGN                                                             06/18/2016 11:55:27 PAGE 3   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

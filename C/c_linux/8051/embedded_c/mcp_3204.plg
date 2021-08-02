@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+V:\embedded_c\mcp_3204.uv2
+Project File Date:  06/14/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling mcp_3204.c...
+MCP_3204.C(43): error C202: 'dp1': undefined identifier
+MCP_3204.C(48): error C202: 'dp2': undefined identifier
+MCP_3204.C(53): error C202: 'dp3': undefined identifier
+compiling main4.c...
+MAIN4.C(10): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(10): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling display.c...
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+MAIN4.C(10): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(10): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling adc_display.c...
+ADC_DISPLAY.C(36): warning C280: 'j': unreferenced local variable
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+MAIN4.C(10): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(10): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling adc_display.c...
+ADC_DISPLAY.C(36): warning C280: 'j': unreferenced local variable
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+MAIN4.C(10): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(10): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling adc_display.c...
+ADC_DISPLAY.C(37): warning C280: 'j': unreferenced local variable
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+MAIN4.C(11): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(11): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling adc_display.c...
+ADC_DISPLAY.C(37): warning C280: 'j': unreferenced local variable
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+MAIN4.C(11): warning C206: 'read_abc_mcp3204': missing function-prototype
+MAIN4.C(11): error C267: 'read_abc_mcp3204': requires ANSI-style prototype
+compiling adc_display.c...
+Target not created
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+compiling adc_display.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03A0H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03CBH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03FCH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 041EH
+Program Size: data=21.2 xdata=0 code=1379
+"mcp_3204" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling mcp_3204.c...
+compiling main4.c...
+compiling adc_display.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03A0H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03CBH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 03FCH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY_MS
+    MODULE:  adc_display.obj (ADC_DISPLAY)
+    ADDRESS: 041EH
+Program Size: data=21.2 xdata=0 code=1379
+"mcp_3204" - 0 Error(s), 5 Warning(s).

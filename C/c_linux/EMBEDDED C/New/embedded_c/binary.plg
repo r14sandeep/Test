@@ -1,0 +1,24 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+V:\EMBEDDED C\New\embedded_c\binary.uv2
+Project File Date:  06/02/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+*** WARNING C318 IN LINE 1 OF main.c: can't open file 'led.h'
+MAIN.C(10): error C141: syntax error near '}'
+compiling led.c...
+compiling delay_ms.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+*** WARNING C318 IN LINE 1 OF main.c: can't open file 'led.h'
+MAIN.C(10): warning C206: 'disp_binary_leds': missing function-prototype
+MAIN.C(10): error C267: 'disp_binary_leds': requires ANSI-style prototype
+compiling led.c...
+compiling delay_ms.c...
+Target not created

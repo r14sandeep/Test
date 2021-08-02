@@ -1,0 +1,6 @@
+def print_vals(**kwargs):
+	print(type(kwargs))
+	print(kwargs)
+	
+
+print_vals(a=10, b=20)

@@ -1,0 +1,149 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        07/02/2016  13:48:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE C:\deepu\main3.obj, C:\deepu\string.obj, C:\deepu\delay1.obj TO C:\deepu\led7 PRINT (.\led7.m5
+>> 1) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\deepu\main3.obj (MAIN3)
+  C:\deepu\string.obj (STRING)
+  C:\deepu\delay1.obj (DELAY1)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  C:\deepu\led7 (MAIN3)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         ?DT?STRING
+            DATA    0013H     0003H     UNIT         _DATA_GROUP_
+            IDATA   0016H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0056H     UNIT         ?PR?_DISPI_4_MUX_SEGS?STRING
+            CODE    00E5H     001FH     UNIT         ?PR?MAIN?MAIN3
+            CODE    0104H     001EH     UNIT         ?PR?_DELAY_MS?DELAY1
+            CODE    0122H     0012H     UNIT         ?C_INITSEG
+            CODE    0134H     000DH     UNIT         ?CO?STRING
+
+
+
+OVERLAY MAP OF MODULE:   C:\deepu\led7 (MAIN3)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?MAIN3
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN3                       0013H    0002H
+  +--> ?PR?_DISPI_4_MUX_SEGS?STRING
+
+?PR?_DISPI_4_MUX_SEGS?STRING         0015H    0001H
+  +--> ?CO?STRING
+  +--> ?PR?_DELAY_MS?DELAY1
+
+
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  13:48:20  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  C:\deepu\led7 (MAIN3)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN3
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00E5H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0013H         SYMBOL        i
+  D:0014H         SYMBOL        j
+  -------         ENDDO         
+  C:00E5H         LINE#         4
+  C:00E5H         LINE#         5
+  C:00E5H         LINE#         8
+  C:00E5H         LINE#         9
+  C:00E5H         LINE#         10
+  C:00E8H         LINE#         11
+  C:00EBH         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN3
+
+  -------         MODULE        STRING
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        dp1
+  D:0009H         PUBLIC        dp2
+  D:000AH         PUBLIC        dp3
+  D:000BH         PUBLIC        cnt
+  C:008FH         PUBLIC        _dispi_4_mux_segs
+  D:000DH         PUBLIC        i
+  D:000FH         PUBLIC        j
+  D:0011H         PUBLIC        k
+  B:00A0H.0       PUBLIC        sel1
+  C:0134H         PUBLIC        seg_lut
+  B:00A0H.1       PUBLIC        sel2
+  B:00A0H.2       PUBLIC        sel3
+  B:00A0H.3       PUBLIC        sel4
+  -------         PROC          _DISPI_4_MUX_SEGS
+  D:0015H         SYMBOL        n
+  C:008FH         LINE#         19
+  C:0091H         LINE#         20
+  C:0091H         LINE#         21
+  C:009AH         LINE#         22
+  C:009CH         LINE#         23
+  C:00A3H         LINE#         24
+  C:00A5H         LINE#         26
+  C:00AFH         LINE#         27
+  C:00B1H         LINE#         28
+  C:00B8H         LINE#         29
+  C:00BAH         LINE#         31
+  C:00C4H         LINE#         32
+  C:00C6H         LINE#         33
+  C:00CDH         LINE#         34
+  C:00CFH         LINE#         36
+BL51 BANKED LINKER/LOCATER V5.03                                                      07/02/2016  13:48:20  PAGE 3
+
+
+  C:00D7H         LINE#         37
+  C:00DBH         LINE#         38
+  C:00E2H         LINE#         39
+  C:00E4H         LINE#         41
+  -------         ENDPROC       _DISPI_4_MUX_SEGS
+  -------         ENDMOD        STRING
+
+  -------         MODULE        DELAY1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0104H         PUBLIC        _delay_ms
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        dly
+  -------         DO            
+  D:0004H         SYMBOL        num
+  -------         ENDDO         
+  C:0104H         LINE#         1
+  C:0104H         LINE#         2
+  C:0104H         LINE#         4
+  C:010DH         LINE#         5
+  C:0121H         LINE#         6
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY1
+
+Program Size: data=23.0 xdata=0 code=321
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+def print_vals(a, b=100, *args, **kwargs):
+	print("a:", a, "b:",b, "args:", args,"kwargs:", kwargs)
+	
+
+print_vals(10, 20, 3, 45, 22, x=9, y=3)

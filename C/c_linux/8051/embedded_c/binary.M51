@@ -1,0 +1,107 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/02/2016  13:01:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE bin_dispaly.obj TO binary RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  bin_dispaly.obj (BIN_DISPALY)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  binary (BIN_DISPALY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0024H     UNIT         ?PR?_DELAY?BIN_DISPALY
+            CODE    0027H     0018H     UNIT         ?PR?MAIN?BIN_DISPALY
+            CODE    003FH     0016H     UNIT         ?C?LIB_CODE
+            CODE    0055H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0061H     0003H     UNIT         ?PR?_DISP_BINARY?BIN_DISPALY
+
+
+
+OVERLAY MAP OF MODULE:   binary (BIN_DISPALY)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?BIN_DISPALY
+
+?PR?MAIN?BIN_DISPALY                 -----    -----
+  +--> ?PR?_DISP_BINARY?BIN_DISPALY
+  +--> ?PR?_DELAY?BIN_DISPALY
+
+?PR?_DELAY?BIN_DISPALY               0008H    0001H
+
+
+
+SYMBOL TABLE OF MODULE:  binary (BIN_DISPALY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BIN_DISPALY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/02/2016  13:01:55  PAGE 2
+
+
+  D:0080H         PUBLIC        P0
+  C:0027H         PUBLIC        main
+  C:0003H         PUBLIC        _delay
+  C:0061H         PUBLIC        _disp_binary
+  -------         PROC          _DELAY
+  D:0008H         SYMBOL        dly
+  -------         DO            
+  D:0082H         SYMBOL        num
+  -------         ENDDO         
+  C:0003H         LINE#         3
+  C:0005H         LINE#         4
+  C:0005H         LINE#         6
+  C:0009H         LINE#         7
+  C:0026H         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DISP_BINARY
+  D:0007H         SYMBOL        num
+  C:0061H         LINE#         9
+  C:0061H         LINE#         10
+  C:0061H         LINE#         11
+  C:0063H         LINE#         12
+  -------         ENDPROC       _DISP_BINARY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0027H         LINE#         13
+  C:0027H         LINE#         14
+  C:0027H         LINE#         16
+  C:0027H         LINE#         17
+  C:0027H         LINE#         18
+  C:0030H         LINE#         19
+  C:0038H         LINE#         20
+  C:003DH         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BIN_DISPALY
+
+  -------         MODULE        ?C?SLCMP
+  C:003FH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+Program Size: data=10.0 xdata=0 code=100
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

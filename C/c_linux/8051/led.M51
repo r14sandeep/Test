@@ -1,0 +1,100 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/10/2016  18:09:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL2\C51\BIN\BL51.EXE C:\v15he7g3\led.obj TO C:\v15he7g3\led PRINT (.\led.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C:\v15he7g3\led.obj (LED)
+  C:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  C:\v15he7g3\led (LED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0024H     UNIT         ?PR?MAIN?LED
+            CODE    0027H     001EH     UNIT         ?PR?_DELAY_MS?LED
+            CODE    0045H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0051H     0006H     UNIT         ?PR?_DISP_BINARY_LEDS?LED
+
+
+
+OVERLAY MAP OF MODULE:   C:\v15he7g3\led (LED)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?LED
+
+?PR?MAIN?LED                      0008H    0002H
+  +--> ?PR?_DISP_BINARY_LEDS?LED
+  +--> ?PR?_DELAY_MS?LED
+
+
+
+SYMBOL TABLE OF MODULE:  C:\v15he7g3\led (LED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0051H         PUBLIC        _disp_binary_leds
+  C:0003H         PUBLIC        main
+  C:0027H         PUBLIC        _delay_ms
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/10/2016  18:09:08  PAGE 2
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0003H         LINE#         8
+  C:0003H         LINE#         9
+  C:0003H         LINE#         10
+  C:0008H         LINE#         11
+  C:0008H         LINE#         12
+  C:000FH         LINE#         13
+  C:0016H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         PROC          _DISP_BINARY_LEDS
+  D:0006H         SYMBOL        num
+  C:0051H         LINE#         18
+  C:0051H         LINE#         19
+  C:0051H         LINE#         20
+  C:0056H         LINE#         21
+  -------         ENDPROC       _DISP_BINARY_LEDS
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        dly
+  -------         DO            
+  D:0004H         SYMBOL        num
+  -------         ENDDO         
+  C:0027H         LINE#         24
+  C:0027H         LINE#         25
+  C:0027H         LINE#         27
+  C:0030H         LINE#         28
+  C:0044H         LINE#         30
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        LED
+
+Program Size: data=11.0 xdata=0 code=87
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

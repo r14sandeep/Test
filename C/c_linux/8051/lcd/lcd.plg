@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+V:\8051\lcd\lcd.uv2
+Project File Date:  06/21/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling lcd.c...
+*** WARNING C318 IN LINE 1 OF lcd.c: can't open file 'reg51'
+LCD.C(5): error C202: 'P2': undefined identifier
+LCD.C(6): error C202: 'P2': undefined identifier
+LCD.C(7): error C202: 'P2': undefined identifier
+LCD.C(12): error C202: 'P0': undefined identifier
+LCD.C(13): error C202: 'rw': undefined identifier
+LCD.C(14): error C202: 'en': undefined identifier
+LCD.C(15): error C202: 'en': undefined identifier
+LCD.C(21): error C202: 'rs': undefined identifier
+LCD.C(27): error C202: 'rs': undefined identifier
+LCD.C(60): error C141: syntax error near ')'
+LCD.C(74): error C141: syntax error near 'void'
+compiling main.c...
+compiling delay.c...
+Target not created
+Build target 'Target 1'
+compiling lcd.c...
+LCD.C(60): error C141: syntax error near ')'
+LCD.C(74): error C141: syntax error near 'void'
+compiling main.c...
+compiling delay.c...
+Target not created
+Build target 'Target 1'
+compiling lcd.c...
+LCD.C(79): error C141: syntax error near 'putc_lcd'
+compiling main.c...
+compiling delay.c...
+Target not created
+Build target 'Target 1'
+compiling lcd.c...
+LCD.C(79): warning C214: 'Argument': conversion: pointer to non-pointer
+compiling main.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTS_LCD?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_FLOAT_LCD?LCD
+Program Size: data=32.0 xdata=0 code=1581
+"lcd" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling lcd.c...
+LCD.C(79): warning C214: 'Argument': conversion: pointer to non-pointer
+compiling main.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTS_LCD?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_FLOAT_LCD?LCD
+Program Size: data=32.0 xdata=0 code=1581
+"lcd" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling lcd.c...
+LCD.C(79): warning C214: 'Argument': conversion: pointer to non-pointer
+compiling main.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTS_LCD?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_FLOAT_LCD?LCD
+Program Size: data=32.0 xdata=0 code=1581
+creating hex file from "lcd"...
+"lcd" - 0 Error(s), 3 Warning(s).

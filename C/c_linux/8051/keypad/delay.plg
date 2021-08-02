@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+V:\8051\delay\delay.uv2
+Project File Date:  06/16/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling delay.c...
+DELAY.C(2): error C231: 'P0': redefinition
+DELAY.C(19): error C202: 'dlt': undefined identifier
+DELAY.C(21): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+DELAY.C(2): error C231: 'P0': redefinition
+DELAY.C(21): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+DELAY.C(2): error C231: 'P0': redefinition
+DELAY.C(21): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+DELAY.C(2): error C231: 'P0': redefinition
+DELAY.C(21): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+DELAY.C(2): error C231: 'P0': redefinition
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+linking...
+Program Size: data=10.0 xdata=0 code=58
+"delay" - 0 Error(s), 0 Warning(s).

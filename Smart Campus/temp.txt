@@ -1,0 +1,12 @@
+struct inquiry_info {
+	bdaddr_t bdaddr;
+	__u8     pscan_rep_mode;
+	__u8     pscan_period_mode;
+	__u8     pscan_mode;
+	__u8     dev_class[3];
+	__le16   clock_offset;
+} __packed;
+
+int hci_inquiry(int dev_id, int len, int num_rsp, const uint8_t *lap, inquiry_info **ii, long flags);
+
+#define IREQ_CACHE_FLUSH 0x0001
