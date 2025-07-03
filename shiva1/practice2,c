@@ -1,0 +1,18 @@
+#include<stdio.h>
+void main()
+{
+  int a,b,add,substract,multiply,rem;
+  float divide;
+  printf("enter values of a,b\n");
+  scanf("%d%d",&a,&b);
+  add=a+b;
+  sustract=a-b;
+  multiply=a*b;
+  divide=(float)a/b;
+  rem=a%b;
+  printf("sum=%d",add);
+  printf("difference=%d,subtract);
+  printf("muntiply=%d,multiplication);
+  printf("division=%d,divide);
+  printf("reminder=%d,rem);
+}    
