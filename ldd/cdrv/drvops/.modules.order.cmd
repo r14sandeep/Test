@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/cdrv/drvops/modules.order := {   echo /home/ubuntu/ldd/ldd/cdrv/drvops/rtc_chrdev.ko;   echo /home/ubuntu/ldd/ldd/cdrv/drvops/apic.ko; :; } | awk '!x[$$0]++' - > /home/ubuntu/ldd/ldd/cdrv/drvops/modules.order

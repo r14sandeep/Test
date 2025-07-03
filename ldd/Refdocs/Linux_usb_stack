@@ -1,0 +1,45 @@
+Linux USB subsystem:
+====================
+
+Linux usb driver stack
+1. usb host controller driver
+2. usb core
+3. usb device driver layer
+
+Kernel headers:
+=================  
+     <linux/usb_ch9.h>
+     <linux/usb.h>
+ 
+
+Important Data structures: 
+==========================
+1. struct usb_device:
+	- each usb slave device detected is represented as an object of 
+          this type
+	- High-level drivers will not have direct access to this, they can 
+          get reference to this using interface_to_usbdev() function.	
+
+2. struct usb_host_config:
+	- each configuration descriptor of a device is represented by an 
+          instance of this type.
+	- usb host drivers do not need to access this structure.
+	- config descriptors are internally managed by usb core.
+
+3. struct usb_host_interface:
+	- each interface descriptor of an usb slave is represented as an 
+          object of this type.
+	- During device probe a list of these instances are created
+          (no of nodes in the list depend on no of interfaces )per device.
+	- usb host drivers are passed list of interface descriptors(compatible)          as argument during driver initialization.
+
+4. struct usb_interface:
+	- Linux usb stack specific structure used to wrap reference to 
+          interface list of a device class.
+	- This instance is passed to driver's probe(HLD) function by mid-layer.
+
+5. struct usb_endpoint_descriptor:
+	- Each end point of a device is represented as an instance of this 
+	  type.
+	- Drivers will have to access this object from usb_host_interface 
+          instance

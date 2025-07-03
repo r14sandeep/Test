@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/cdrv/templates/plat_vdev.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id=sha1  -T ./scripts/module-common.lds -o /home/ubuntu/ldd/ldd/cdrv/templates/plat_vdev.ko /home/ubuntu/ldd/ldd/cdrv/templates/plat_vdev.o /home/ubuntu/ldd/ldd/cdrv/templates/plat_vdev.mod.o;  true

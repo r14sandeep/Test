@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/cdrv/templates/cdrv.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id=sha1  -T ./scripts/module-common.lds -o /home/ubuntu/ldd/ldd/cdrv/templates/cdrv.ko /home/ubuntu/ldd/ldd/cdrv/templates/cdrv.o /home/ubuntu/ldd/ldd/cdrv/templates/cdrv.mod.o;  true

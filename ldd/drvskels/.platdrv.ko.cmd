@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/drvskels/platdrv.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/ubuntu/ldd/ldd/drvskels/platdrv.ko /home/ubuntu/ldd/ldd/drvskels/platdrv.o /home/ubuntu/ldd/ldd/drvskels/platdrv.mod.o;  true

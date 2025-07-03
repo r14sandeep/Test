@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/drvskels/modules.order := {   echo /home/ubuntu/ldd/ldd/drvskels/usb_skel.ko;   echo /home/ubuntu/ldd/ldd/drvskels/pci_skel.ko;   echo /home/ubuntu/ldd/ldd/drvskels/plat_device.ko;   echo /home/ubuntu/ldd/ldd/drvskels/platdrv.ko; :; } | awk '!x[$$0]++' - > /home/ubuntu/ldd/ldd/drvskels/modules.order

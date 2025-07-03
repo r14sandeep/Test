@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/ldd/ldd/cdrv/templates/modules.order := {   echo /home/ubuntu/ldd/ldd/cdrv/templates/plat_vdev.ko;   echo /home/ubuntu/ldd/ldd/cdrv/templates/cdrv_udev.ko; :; } | awk '!x[$$0]++' - > /home/ubuntu/ldd/ldd/cdrv/templates/modules.order

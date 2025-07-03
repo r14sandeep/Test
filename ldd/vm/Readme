@@ -1,0 +1,49 @@
+Address translation
+==================
+
+
+1. Application virtual address space is made up of set of blocks 
+   each represented by an instance of struct vm_area_struct.
+
+   list of vma instances and their attributes(start address, length , 
+   access permissions, etc)are maintained in memory descriptor of the 
+   application's pcb(task_struct->mm)
+
+   All references to data (stack, data, heap, mmap)from application's 
+   code would use virtual address of data (which is block_start_address + 
+   offset)
+
+   MMU's segment unit will have to look up into memory descriptor(VMA) of 
+   the process and locate vma instance for the specified address. Vma look up 
+   will produce linear address (page+offset) of the data element in memory.
+
+   MMU's paging unit will have to translate linear address 
+   (discovered by segment unit) into physical address (frame+offset) 
+   using page table entries of the process.
+
+
+2. Linear address translation requires Lookup's into process page table
+
+   Kernel's MM maintains page table per process, this table holds
+   process page-frame mapping  entries with access attributes(called as PTE's). 
+   Base address of the process page table is stored in memory descriptor of the process (task_struct -> mm -> pgd).
+
+
+3. Page table management
+
+  Kernel MM subsystem will have to set aside approximately 4MB of 
+  physical memory(32 bit address space) for allocation of page table for each 
+  process in memory.
+
+  This need for reserving memory for page table results in overhead 
+  and does not allow effective memory utilization for actual progam/kernel 
+  execution.
+
+  To reduce this overhead Linux memory subsystem uses Level-Indirection 
+  methods for allocation and management of page-table.
+
+  Page table Level Indirection policy's
+	- Two-level paging(32bit systems)
+	- Three-level paging(64 bit systems upto kernel 4.6)
+	- Four-level paging(64 bit systems since kernel 4.6)
+	- Five-level paging(64 bit systems since kernel 4.12)

@@ -1,0 +1,80 @@
+gpio-controller nodes
+------------------------
+Every GPIO controller node must declare both an empty "gpio-controller"
+property, and #gpio-cells which declares the size of the gpio-specifier.
+
+
+Example gpio-controller nodes:
+
+   gpio0: gpio@44e07000 {
+        compatible = "ti,omap4-gpio";
+        ti,hwmods = "gpio1";
+        gpio-controller;
+        #gpio-cells = <2>;
+        interrupt-controller;
+        #interrupt-cells = <2>;
+        reg = <0x44e07000 0x1000>;
+        interrupts = <96>;
+    };
+
+    gpio1: gpio@4804c000 {
+        compatible = "ti,omap4-gpio";
+        ti,hwmods = "gpio2";
+        gpio-controller;
+        #gpio-cells = <2>;
+        interrupt-controller;
+        #interrupt-cells = <2>;
+        reg = <0x4804c000 0x1000>;
+        interrupts = <98>;
+    };
+
+    gpio2: gpio@481ac000 {
+        compatible = "ti,omap4-gpio";
+        ti,hwmods = "gpio3";
+        gpio-controller;
+        #gpio-cells = <2>;
+        interrupt-controller;
+        #interrupt-cells = <2>;
+        reg = <0x481ac000 0x1000>;
+        interrupts = <32>;
+    };
+
+    gpio3: gpio@481ae000 {
+        compatible = "ti,omap4-gpio";
+        ti,hwmods = "gpio4";
+        gpio-controller;
+        #gpio-cells = <2>;
+        interrupt-controller;
+        #interrupt-cells = <2>;
+        reg = <0x481ae000 0x1000>;
+        interrupts = <62>;
+    };
+
+gpio-specifier length is controller dependent, it may encode: bank, 
+pin position inside the bank,state of the pin.
+
+Exact meaning of each specifier cell is controller specific, and must be 
+documented in the device tree binding for the device.
+
+
+gpio-controller and pinctrl subsystem
+------------------------------------------
+gpio-controller on a SOC might be tightly coupled with the pinctrl
+subsystem, in the sense that the pins can be used by other functions
+together with optional gpio feature.
+
+While the pin allocation is totally managed by the pin ctrl subsystem,
+gpio (under gpiolib) is still maintained by gpio drivers. It may happen
+that different pin ranges in a SoC is managed by different gpio drivers.
+This makes it logical to let gpio drivers announce their pin ranges to
+the pin ctrl subsystem 
+
+&am33xx_pinmux {
+  gpio0_pins: gpio0_pins {
+    pinctrl-single,pins = <                                                       
+        0x144 (PIN_OUTPUT_PULLUP | MUX_MODE7)     /* RMII1_REF_CLK as GPIO out */
+        0x158 (PIN_OUTPUT_PULLDOWN | MUX_MODE7)   /* pin conf_spi0_d1 as GPIO out */              
+        0x15c (PIN_OUTPUT_PULLDOWN | MUX_MODE7)   /* pin conf_spi0_cs0 as GPIO out */              
+        /*0x160 (PIN_INPUT | MUX_MODE7)*/             /* pin conf_spi0_cs1 as GPIO input */              
+    >;
+  };

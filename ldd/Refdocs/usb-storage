@@ -1,0 +1,12 @@
+
+Usb storage class driver (drivers/usb/storage/usb.c)
+
+
+storage_probe()
+{
+   step 1: sets up a SCSI host structure
+   step 2: registers with SCSI subsystem
+}
+
+Routines in scsiglue.c and protocol.c take care of converting SRB's to URB's 
+
